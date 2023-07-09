@@ -12,6 +12,17 @@ spring:
     ansi:
       enabled: always
 
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+  jwt:
+    secret: 1gV6JR7dxy2PNduwhGbld1MxKbKC8wgpHGHt9ZT33dS2URTF5u0iciIK6x5PRVWQRInyEsTlOxFWaxJEK6btkeqs5SzvAWmMnzw
+    token:
+      access-expiration-time: 7200000    # 120분
+      refresh-expiration-time: 604800000   # 7일
+
 logging:
   level:
     org.hibernate.type: trace

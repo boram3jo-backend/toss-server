@@ -1,15 +1,13 @@
 package com.server.toss.dto;
 
 import com.server.toss.domain.Users;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NonNull;
+import lombok.*;
 
 public class RegisterDto {
     private RegisterDto() {}
 
     @Getter
+    @Setter
     public static class Request {
 
         @NonNull
@@ -20,8 +18,8 @@ public class RegisterDto {
         private String name;
         @NonNull
         private String birthday;
-        public static boolean hasNullDataBeforeSignup(Request registerDto) {
-            return  registerDto.getEmail() == null
+        public static boolean hasNullDataBeforeRegister(Request registerDto) {
+            return registerDto.getEmail() == null
                     || registerDto.getPassword() == null
                     || registerDto.getName() == null
                     || registerDto.getBirthday() == null;
