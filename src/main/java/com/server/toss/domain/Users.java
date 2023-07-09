@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 @EntityListeners(AuditingEntityListener.class)
 @Builder
 public class Users implements UserDetails {

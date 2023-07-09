@@ -8,6 +8,8 @@ public class RegisterDto {
 
     @Getter
     @Setter
+    @NoArgsConstructor
+    @AllArgsConstructor
     public static class Request {
 
         @NonNull
@@ -34,7 +36,7 @@ public class RegisterDto {
         private String email;
         private String name;
 
-        public static Response from(Users user) {
+        public static Response from(UsersDto user) {
             return Response.builder()
                     .id(user.getId())
                     .email(user.getEmail())

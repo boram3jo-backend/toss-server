@@ -26,11 +26,10 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         String accessToken = jwtTokenProvider.resolveAccessToken(request);
 
         // 유효한 토큰인지 확인합니다.
-        if (accessToken != null) {
-            // 어세스 토큰이 유효한 상황
-            if (jwtTokenProvider.validateToken(accessToken) && jwtTokenProvider.getTokenType(accessToken)) {
-                this.setAuthentication(accessToken);
-            }
+        if (accessToken != null
+                && jwtTokenProvider.validateToken(accessToken)
+                && jwtTokenProvider.getTokenType(accessToken)) {
+            this.setAuthentication(accessToken);
         }
         filterChain.doFilter(request, response);
     }
